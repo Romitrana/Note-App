@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  /* background-color: blueviolet; */
+  width: auto;
+  height: auto;
+  padding: 0.4rem;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid #333;
+  border-radius: 0.6rem;
+  margin-bottom: 0.2rem;
+  position: sticky;
+  top: 0.4rem;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9);
+}
+
+header #logo {
+  width: 12rem;
+}
+
+header #colorVarients {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 8rem;
+  list-style: none;
+}
+header #colorVarients li {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #333;
+}
+header #colorVarients li {
+  cursor: pointer;
+}
+header #user {
+  width: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header #user button {
+  width: 4rem;
+  height: 2rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  border: none;
+}
+header #user button:hover {
+  cursor: pointer;
+}
+
+header #user span {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1.5px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+header #user span i {
+  font-weight: 600;
+}
+header #user span:hover {
+  cursor: pointer;
+}
+
+/* section after header */
+#section1 {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+#section1 aside {
+  border: 3px solid #333;
+  border-radius: 0.6rem;
+}
+
+#section1 #tab {
+  width: 30%;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1rem;
+}
+#section1 #content {
+  width: 69.8%;
+}
+
+/* tab */
+#tab #addNote {
+  width: 95%;
+  height: 3rem;
+  margin: 6px auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#tab #addNote li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 3rem;
+}
+#tab #addNote li button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+#tab #addNote li button:hover {
+  cursor: pointer;
+  background-color: #434242;
+  border: 1px dotted #fff;
+}
+#tab #addNote .fa-filter {
+  font-size: 2rem;
+}
+#tab #addNote .fa-filter:hover {
+  cursor: pointer;
+}
+
+#note_collection {
+  list-style: none;
+}
+
+#note_collection .note {
+  width: 95%;
+  height: 3rem;
+  margin: 6px auto;
+  background-color: #333;
+  color: #fff;
+  border: 3px solid #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: wrap;
+  padding: 0.4rem;
+}
+#note_collection .note:hover {
+  background-color: #434242;
+  cursor: pointer;
+  scale: 0.98;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* responsive */
+@media only screen and (max-width: 550px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header #user {
+    margin: 0.4rem 0.4rem 0.6rem auto;
+  }
+  header #colorVarients {
+    margin: 0.2rem 1.2rem;
+  }
+  #section1 {
+    flex-direction: column;
+  }
+  #section1 #tab {
+    width: 100%;
+  }
+  #section1 #content {
+    height: 100%;
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  .content_head {
+    flex-direction: column;
+  }
+  #title {
+    width: 100%;
+  }
+}
+
+/* utilities */
+
+.theme1 {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(132, 180, 236, 1) 100%
+  );
+}
+.theme2 {
+  background: rgb(229, 132, 171);
+  background: radial-gradient(
+    circle,
+    rgba(229, 132, 171, 1) 0%,
+    rgba(90, 235, 67, 1) 100%
+  );
+}
+.theme3 {
+  background: rgb(132, 229, 216);
+  background: radial-gradient(
+    circle,
+    rgba(132, 229, 216, 1) 0%,
+    rgba(246, 73, 73, 1) 83%
+  );
+}
+.theme4 {
+  background: rgb(167, 244, 234);
+  background: radial-gradient(
+    circle,
+    rgba(167, 244, 234, 1) 0%,
+    rgba(104, 73, 246, 1) 83%
+  );
+}
+
+.current_theme {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+#theme1 {
+  background: -webkit-linear-gradient(
+    rgba(132, 180, 236, 1),
+    rgba(238, 174, 202, 1)
+  );
+}
+#theme2 {
+  background: -webkit-linear-gradient(
+    rgba(229, 132, 171, 1),
+    rgba(90, 235, 67, 1)
+  );
+}
+#theme3 {
+  background: -webkit-linear-gradient(
+    rgba(132, 229, 216, 1),
+    rgba(246, 73, 73, 1)
+  );
+}
+#theme4 {
+  background: -webkit-linear-gradient(
+    rgba(167, 244, 234, 1),
+    rgba(104, 73, 246, 1)
+  );
+}
+
+.gradient-background {
+  background: linear-gradient(59deg, deepskyblue, darkviolet, blue);
+  background-size: 180% 180%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* content css */
+#content {
+  overflow: hidden;
+  padding: 0.4rem;
+}
+#content ul {
+  list-style: none;
+  padding: 0.2rem;
+}
+#content ul li {
+  margin: 0.2rem;
+  font-family: monospace;
+  border: 2px solid #eae5e5;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+  background-color: #333;
+  color: #fff;
+  font-weight: 100;
+}
+.content_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  overflow: hidden;
+}
+#title {
+  height: 2.8rem;
+  width: 18rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid #333;
+  padding-left: 1rem;
+}
+#title:focus {
+  outline: none;
+}
+#saveChange {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+#saveChange:hover {
+  cursor: pointer;
+  background-color: #d5cfcf;
+  transition: all 0.2s ease;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+#writeNote {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+#noteData {
+  resize: none;
+  height: 82%;
+  width: 100%;
+  border-radius: 0.6rem;
+  font-size: large;
+  background-color: transparent;
+  padding: 1rem 0.5rem 0.5rem 2rem;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
