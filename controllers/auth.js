@@ -22,7 +22,9 @@ const login = async (req, res) => {
     //generate token
     const token = user.createJWT();
 
-    res.status(200).json({ user: { name: user.name }, token });
+    res
+      .status(200)
+      .json({ user: { name: user.name }, token, userId: user._id });
   } catch (error) {
     res.status(400).json({ err: error });
   }
@@ -31,11 +33,21 @@ const login = async (req, res) => {
 const register = async (req, res) => {
   try {
     await UserValidate.validateAsync(req.body);
+
+    const existingUser = await User.findOne({ email: req.body.email });
+    if (existingUser) {
+      return res
+        .status(409)
+        .json({ error: "User with this email already exists" });
+    }
+
     const user = await User.create({ ...req.body });
+
     const token = user.createJWT();
-    res.status(201).json({ user: { name: user.name }, token });
+
+    res.status(201).json({ name: user.name, token: token });
   } catch (error) {
-    res.status(400).json({ err: error });
+    res.status(400).json({ error: error.message });
   }
 };
 

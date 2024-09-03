@@ -9,7 +9,7 @@ const NoteSchema = mongoose.Schema({
   content: {
     type: String,
   },
-  updated_at: { type: Date, default: Date.now },
+  updated_at: { type: Date },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

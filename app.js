@@ -7,7 +7,7 @@ const authenticateUser = require("./middleware/authentication.js");
 const notFound = require("./middleware/not-found.js");
 require("dotenv").config();
 const app = express();
-const port = 3000;
+const port = 8000;
 //MiddleWare
 
 app.use(express.static("./public"));
@@ -24,7 +24,7 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "Register", "register.html"));
 });
-app.get("/Notebook", authenticateUser, (req, res) => {
+app.get("/Notebook", (req, res) => {
   console.log("dashboard exicuted..!");
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });

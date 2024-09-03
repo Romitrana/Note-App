@@ -1,9 +1,8 @@
 const Note = require("../model/noteSchema");
-
 //get ALL notes
 const getAllNotes = async (req, res) => {
   try {
-    const note = await Note.find({ userId: req.user.userId });
+    const note = await Note.find({ userId: req.user.userId }); //get the notes associated with this userId.
     res.status(200).send({ note });
   } catch (error) {
     res.status(500).send({ msg: error });

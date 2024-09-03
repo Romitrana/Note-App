@@ -11,57 +11,110 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./index.css" />
-    <title>NoteApp | RR WebDev</title>
+    <!-- febicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon.ico"
+    />
+    <!-- <script
+      src="https://cdn.tiny.cloud/1/tv1cdsftzvvvf41hucttr9nhu8t3lfq77tszrddppm4bunjh/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script> -->
+    <script
+      src="https://cdn.tiny.cloud/1/tv1cdsftzvvvf41hucttr9nhu8t3lfq77tszrddppm4bunjh/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <!-- <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+        ai_request: (request, respondWith) =>
+          respondWith.string(() =>
+            Promise.reject("See docs to implement AI Assistant")
+          ),
+      });
+    </script> -->
+    <title>NoteApp | Dashboard</title>
   </head>
   <body>
-    <div class="container gradient-background">
+    <div id="overlay"></div>
+    <div class="container">
+      <span id="message"></span>
       <header>
         <img
-          id="logo"
           src="./assets/noteBOOK_logo-removebg-preview.png"
           alt="logo"
+          id="logo"
         />
-        <ul id="colorVarients">
-          <li id="theme1"></li>
-          <li id="theme2"></li>
-          <li id="theme3"></li>
-          <li id="theme4"></li>
-        </ul>
-        <div id="user">
-          <span><i class="fa-regular fa-user"></i></span>
-          <button>Logout</button>
+        <div class="user_account">
+          <span id="logout">Logout</span>
+          <span id="user_name">Romit rana</span>
+          <span id="user_photo"><i class="fa-regular fa-user"></i></span>
         </div>
       </header>
-      <section id="section1">
-        <aside id="tab">
-          <ul id="addNote">
-            <li><i class="fa-solid fa-filter"></i></li>
-            <li>
-              <button id="addbtn"><i class="fa-solid fa-plus"></i></button>
-            </li>
-          </ul>
-          <ul id="note_collection">
-            <li class="note">Mathematics</li>
-            <li class="note">Science</li>
-            <li class="note">Physics</li>
-          </ul>
+      <section class="contents">
+        <aside class="left">
+          <button id="addNote">Add New Note</button>
+          <div id="notes_container">
+            <p id="noNotes">No Available Notes...</p>
+            <!-- notes -->
+            <!-- <div class="note">
+              <div class="note_title">
+                <span class="title">title</span>
+                <span class="text_content">pre text content</span>
+              </div>
+              <div class="note_info">
+                <span class="delete"><i class="fa-solid fa-trash"></i></span>
+                <p class="last_update">26 Jul</p>
+              </div>
+            </div> -->
+            <!-- notes end -->
+          </div>
         </aside>
-        <aside id="content">
-          <div class="content_head">
+        <aside class="right">
+          <div class="titleContainer">
             <input type="text" id="title" placeholder="Enter title here..." />
-            <ul>
-              <li>Created on : <span>12 Aug 05:43AM</span></li>
-              <li>Updated on : <span>12 Aug 05:43AM</span></li>
-            </ul>
-            <button id="saveChange">Save Changes</button>
+            <button id="update">Save</button>
           </div>
-          <div id="writeNote">
-            <textarea name="noteData" id="noteData"></textarea>
-          </div>
+          <textarea name="editor" id="editor"></textarea>
         </aside>
       </section>
+      <!-- create new notes structure -->
+      <div id="modal">
+        <h2>Create New Notes</h2>
+        <label for="newtitle">Title</label><br />
+        <input
+          type="text"
+          name="newtitle"
+          id="newtitle"
+          placeholder="Enter the Title..."
+          maxlength="30"
+        /><br />
+        <button id="newBtn">Create</button>
+        <span id="closeModal"><i class="fa-solid fa-x"></i></span>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="./index.js"></script>
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat",
+      });
+    </script>
   </body>
 </html>

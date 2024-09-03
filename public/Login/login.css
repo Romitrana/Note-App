@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
   .container {
-    background: linear-gradient(59deg, deepskyblue, darkviolet, blue);
+    background: linear-gradient(59deg, rgb(77, 190, 228), rgb(164, 69, 205), rgb(70, 70, 247));
     background-size: 180% 180%;
     animation: gradient-animation 5s ease infinite;
     width: 100vw;
