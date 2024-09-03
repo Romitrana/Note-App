@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NOTEBOOK-Registration| RR WEB DEV</title>
-    <link rel="stylesheet" href="register.css" />
+    <title>NOTEBOOK-Registration | RR WEB DEV</title>
+    <!-- Updated the stylesheet link to use an absolute path -->
+    <link rel="stylesheet" href="/Register/register.css" />
   </head>
   <body>
     <div class="container">
       <form id="form">
-        <img src="../assets//noteBOOK_logo-removebg-preview.png" alt="logo" />
-        <label for="username">Name</label>
+        <img src="/assets/noteBOOK_logo-removebg-preview.png" alt="logo" />
+        <label for="name">Name</label>
         <input type="text" placeholder="UserName" id="name" />
 
         <label for="username">Email</label>
@@ -19,11 +20,12 @@
 
         <button type="submit">Register</button>
         <div class="login">
-          Already have an account? <a href="../Login/login.html">login here</a>
+          Already have an account? <a href="/login">login here</a>
         </div>
       </form>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="module" src="register.js"></script>
+    <!-- Updated the script link to use an absolute path -->
+    <script type="module" src="/Register/register.js"></script>
   </body>
 </html>

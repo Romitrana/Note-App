@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <title>NOTEBOOK | RR WEB DEV</title>
-    <link rel="stylesheet" href="login.css" />
-    <!--Stylesheet-->
+    <!-- Updated the stylesheet link to use an absolute path -->
+    <link rel="stylesheet" href="/Login/login.css" />
   </head>
   <body>
     <div class="container">
       <form id="form">
-        <img src="../assets//noteBOOK_logo-removebg-preview.png" alt="logo" />
+        <img src="/assets/noteBOOK_logo-removebg-preview.png" alt="logo" />
         <label for="username">Email</label>
         <input type="text" placeholder="Email id" id="username" />
 
@@ -16,9 +16,12 @@
         <input type="password" placeholder="Password" id="password" />
 
         <button>Log In</button>
-        <div class="login">To Create an account <a href="/register">Register here</a></div>
+        <div class="login">
+          To Create an account <a href="/register">Register here</a>
+        </div>
       </form>
     </div>
-    <script src="login.js"></script>
+    <!-- Updated the script link to use an absolute path -->
+    <script src="/Login/login.js"></script>
   </body>
 </html>
