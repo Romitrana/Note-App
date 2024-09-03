@@ -10,8 +10,8 @@ const app = express();
 const port = 8000;
 //MiddleWare
 
-app.use(express.static("./public"));
-// app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json()); //parse request body data.
 
 //router
