@@ -63,11 +63,10 @@ function fetch_Notes() {
       } else {
         noNote.style.display = "none";
         response.data.note.forEach((note) => {
-          //formatting dates
           const dateObject = new Date(note.created_at);
-          const day = dateObject.getDate();
-          const month = monthNames[dateObject.getMonth() + 1];
-          const last_update = day + " " + month;
+          const day = dateObject.getDate(); 
+          const month = monthNames[dateObject.getMonth()];
+          const createdOn = day + " " + month;
           let preContent;
           if (note.content.includes("<p>")) {
             var temporaryDiv = document.createElement("div");
@@ -83,7 +82,7 @@ function fetch_Notes() {
         </div>
         <div class="note_info">
           <span class="delete"><i class="fa-solid fa-trash"></i></span>
-          <p class="last_update">${last_update}</p>
+          <p class="last_update">${createdOn}</p>
         </div>
       </div>`;
           NotesContainer.innerHTML += noteTemplate;
